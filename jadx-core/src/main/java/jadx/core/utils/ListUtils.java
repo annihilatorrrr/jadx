@@ -19,6 +19,25 @@ import org.jetbrains.annotations.Nullable;
 
 public class ListUtils {
 
+	public static <T> List<T> mutableListOf(T obj) {
+		List<T> list = new ArrayList<>();
+		list.add(obj);
+		return list;
+	}
+
+	public static <T> List<T> mutableListOf(T obj1, T obj2) {
+		List<T> list = new ArrayList<>();
+		list.add(obj1);
+		list.add(obj2);
+		return list;
+	}
+
+	public static <T> List<T> mutableListOf(T... objs) {
+		List<T> list = new ArrayList<>();
+		Collections.addAll(list, objs);
+		return list;
+	}
+
 	public static <T> boolean isSingleElement(@Nullable List<T> list, T obj) {
 		if (list == null || list.size() != 1) {
 			return false;
